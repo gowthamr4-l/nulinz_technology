@@ -1,0 +1,195 @@
+.dt-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    padding: 22px 20px 12px;
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+}
+
+.dt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.dt-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1b2559;
+    margin: 0;
+}
+
+.dt-menu-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.dt-menu-btn span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #a3aed0;
+}
+
+/* Table scroll */
+.dt-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dt-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px;
+}
+
+.dt-th {
+    font-size: 11px;
+    font-weight: 600;
+    color: #a3aed0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 16px 8px 0;
+    text-align: left;
+    border-bottom: 1px solid #f4f7fe;
+    white-space: nowrap;
+}
+
+.dt-sort-icon {
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+.dt-tr {
+    border-bottom: 1px solid #f9fafb;
+}
+
+.dt-tr:last-child {
+    border-bottom: none;
+}
+
+.dt-tr:hover {
+    background: #fafbff;
+}
+
+.dt-td {
+    padding: 11px 16px 11px 0;
+    vertical-align: middle;
+}
+
+.dt-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1b2559;
+    white-space: nowrap;
+    min-width: 110px;
+}
+
+.dt-date {
+    font-size: 13px;
+    color: #a3aed0;
+    white-space: nowrap;
+}
+
+/* ── Status icons — flat, no background ── */
+.dt-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dt-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+/* ── Progress ── */
+.dt-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 130px;
+}
+
+.dt-progress-pct {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1b2559;
+    min-width: 38px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.dt-progress-track {
+    flex: 1;
+    height: 6px;
+    background: #edf2f7;
+    border-radius: 99px;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.dt-progress-bar {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.4s ease;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .dt-card {
+        padding: 16px 14px 10px;
+    }
+
+    .dt-title {
+        font-size: 16px;
+    }
+
+    .dt-progress-wrap {
+        min-width: 100px;
+    }
+
+    .dt-progress-track {
+        min-width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dt-th {
+        font-size: 10px;
+        padding: 6px 10px 6px 0;
+    }
+
+    .dt-td {
+        padding: 8px 10px 8px 0;
+    }
+
+    .dt-name {
+        font-size: 12px;
+    }
+
+    .dt-date {
+        font-size: 11px;
+    }
+
+    .dt-progress-pct {
+        font-size: 11px;
+        min-width: 30px;
+    }
+
+    .dt-status-icons {
+        gap: 6px;
+    }
+}

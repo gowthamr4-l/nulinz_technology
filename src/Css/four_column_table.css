@@ -1,0 +1,170 @@
+/* =====================
+   CARD
+   ===================== */
+.fct-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    padding: 22px 20px 16px;
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+.fct-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fct-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1b2559;
+    margin: 0;
+}
+
+.fct-menu-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.fct-menu-btn:hover {
+    background: #f4f7fe;
+}
+
+.fct-menu-btn span {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #a3aed0;
+}
+
+/* =====================
+   TABLE WRAPPER
+   ===================== */
+.fct-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* =====================
+   TABLE
+   ===================== */
+.fct-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 420px;
+}
+
+/* =====================
+   HEADER ROW
+   ===================== */
+.fct-th {
+    font-size: 11px;
+    font-weight: 600;
+    color: #a3aed0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 12px 10px 0;
+    text-align: left;
+    border-bottom: 1px solid #f4f7fe;
+    white-space: nowrap;
+}
+
+.fct-sort-icon {
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+/* =====================
+   BODY ROWS
+   ===================== */
+.fct-tr {
+    border-bottom: 1px solid #f9fafb;
+    transition: background 0.1s;
+}
+
+.fct-tr:last-child {
+    border-bottom: none;
+}
+
+.fct-tr:hover {
+    background: #fafbff;
+}
+
+.fct-td {
+    padding: 12px 12px 12px 0;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+/* Name column */
+.fct-name {
+    font-weight: 700;
+    color: #1b2559;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+/* Percentage / quantity columns */
+.fct-num {
+    font-weight: 500;
+    color: #1b2559;
+    white-space: nowrap;
+}
+
+/* Date column */
+.fct-date {
+    color: #a3aed0;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* =====================
+   RESPONSIVE — Tablet ≤ 768px
+   ===================== */
+@media (max-width: 768px) {
+    .fct-card {
+        padding: 16px 14px 12px;
+    }
+
+    .fct-title {
+        font-size: 16px;
+    }
+
+    .fct-th,
+    .fct-td {
+        padding-right: 8px;
+    }
+}
+
+/* =====================
+   RESPONSIVE — Mobile ≤ 480px
+   ===================== */
+@media (max-width: 480px) {
+    .fct-title {
+        font-size: 15px;
+    }
+
+    .fct-th {
+        font-size: 10px;
+    }
+
+    .fct-td {
+        font-size: 12px;
+        padding: 9px 8px 9px 0;
+    }
+}

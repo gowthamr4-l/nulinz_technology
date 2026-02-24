@@ -6,11 +6,12 @@
   position: fixed;
   left: 0;
   top: 0;
-  transition: 0.3s;
+  transition: left 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .logo {
@@ -22,6 +23,7 @@
 .menu {
   list-style: none;
   padding: 0;
+  flex: 1;
 }
 
 .menu li {
@@ -65,7 +67,7 @@
   font-size: 14px;
 }
 
-/* Upgrade Card */
+/* ── Upgrade Card ── */
 .upgrade-card {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
@@ -88,28 +90,59 @@
   font-size: 20px;
 }
 
-/* Mobile */
-.mobile-toggle {
+/* ── Backdrop (mobile only) ── */
+.sidebar-backdrop {
+  display: none;
   position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1100;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
 }
 
-.mobile-toggle button {
-  background: #5a4fff;
-  color: white;
-  border: none;
-  padding: 8px 10px;
-  border-radius: 6px;
-}
-
+/* ── Mobile ≤ 992px ── */
 @media (max-width: 992px) {
   .sidebar {
-    left: -100%;
+    left: -280px;
+    /* hide fully off screen */
   }
 
   .sidebar.active {
     left: 0;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .sidebar-backdrop {
+    display: block;
+  }
+}
+
+/* ── Small mobile ≤ 480px ── */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 240px;
+    left: -260px;
+    padding: 24px 16px;
+  }
+
+  .logo {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .menu-link {
+    font-size: 13px;
+    padding: 9px 10px;
+  }
+
+  .upgrade-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .lock-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+    margin: -34px auto 12px;
   }
 }

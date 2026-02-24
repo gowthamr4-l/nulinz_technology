@@ -1,0 +1,92 @@
+.pie-chart-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px 24px;
+    width: 100%;
+    max-width: 400px;
+    /* Limits size on desktop */
+    margin: 0 auto;
+    /* Centers the card itself */
+    font-family: "DM Sans", sans-serif;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1b2559;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #a3aed0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Centering the actual Chart */
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+    margin: 0 auto;
+    max-width: 280px;
+    /* Controls how big the circle gets */
+}
+
+/* Responsive Legend */
+.legend-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+    border-radius: 15px;
+    padding: 15px 10px;
+}
+
+.legend-label {
+    font-size: 12px;
+    color: #a3aed0;
+    font-weight: 500;
+}
+
+.legend-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1b2559;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.indigo {
+    background: #4318ff;
+}
+
+.dot.light-blue {
+    background: #6ad2ff;
+}
+
+.divider {
+    width: 1px;
+    height: 40px;
+    background: #e9edf7;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .pie-chart-card {
+        padding: 20px 15px;
+    }
+
+    .legend-value {
+        font-size: 18px;
+    }
+}

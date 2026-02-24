@@ -1,0 +1,261 @@
+/* =====================
+   BASE & RESET
+   ===================== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f4f7fe;
+    color: #1a1f36;
+}
+
+/* =====================
+   LAYOUT
+   ===================== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.06);
+}
+
+.main-content {
+    margin-left: 240px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-container {
+    padding: 8px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* =====================
+   ROW 1 — STATS CARDS (6 columns)
+   ===================== */
+.stats-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+/* =====================
+   ROW 2 — STATS CHART + WEEKLY REVENUE (2 columns)
+   ===================== */
+.row-chart-revenue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* =====================
+   ROW 3 — CHECK TABLE + DAILY TRAFFIC + PIE CHART
+   ===================== */
+.row-table-traffic-pie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.row-table-traffic-pie2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+}
+
+/* =====================
+   ROW 4 — COMPLEX TABLE + TASKS + CALENDAR
+   ===================== */
+.row-complex-tasks-calendar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* =====================
+   ROW 5 — LESSON + TEAM + SECURITY + STARBUCKS
+   ===================== */
+.row-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* =====================
+   CARD BASE
+   ===================== */
+.card-base {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* =====================
+   RESPONSIVE — Large Desktop (≤1400px)
+   ===================== */
+@media (max-width: 1400px) {
+    .stats-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =====================
+   RESPONSIVE — Desktop (≤1200px)
+   ===================== */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .stats-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .row-chart-revenue {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-table-traffic-pie {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-table-traffic-pie .your-pie-chart {
+        grid-column: 1 / -1;
+    }
+
+    .row-complex-tasks-calendar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-complex-tasks-calendar .calendar-card {
+        grid-column: 1 / -1;
+    }
+
+    .row-bottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================
+   RESPONSIVE — Tablet (≤992px)
+   ===================== */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        width: 240px;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .stats-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-chart-revenue {
+        grid-template-columns: 1fr;
+    }
+
+    .row-table-traffic-pie {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-table-traffic-pie .check-table {
+        grid-column: 1 / -1;
+    }
+
+    .row-complex-tasks-calendar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .row-complex-tasks-calendar .complex-table {
+        grid-column: 1 / -1;
+    }
+
+    .row-bottom {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================
+   RESPONSIVE — Mobile (≤576px)
+   ===================== */
+@media (max-width: 576px) {
+    .dashboard-container {
+        padding: 8px 12px 32px;
+        gap: 20px;
+        /* Increased gap for better visual separation */
+        align-items: center;
+        /* Centers grid items horizontally */
+    }
+
+    /* Stack everything in one column and center the cards */
+    .stats-cards-grid,
+    .row-chart-revenue,
+    .row-table-traffic-pie,
+    .row-table-traffic-pie2,
+    .row-complex-tasks-calendar,
+    .row-bottom {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 400px;
+        /* Prevents cards from becoming too wide on mobile */
+        margin: 0 auto;
+        /* margin: 0 auto; */
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centers the grid container itself */
+    }
+
+    /* Center the internal content of specific small cards if needed */
+    .security-card,
+    .starbucks-card,
+    .lesson-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Force full width for tables to allow internal scrolling */
+    .check_table,
+    .complex_table {
+        max-width: 100%;
+    }
+
+    /* Reset grid column spans for mobile */
+    .row-table-traffic-pie .check-table,
+    .row-table-traffic-pie .your-pie-chart,
+    .row-complex-tasks-calendar .complex-table,
+    .row-complex-tasks-calendar .calendar-card {
+        grid-column: auto;
+    }
+}

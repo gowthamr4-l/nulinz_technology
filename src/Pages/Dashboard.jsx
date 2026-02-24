@@ -1,107 +1,95 @@
 import React, { useState } from "react";
-import Chart from "react-apexcharts";
-import { Card, Row, Col } from "react-bootstrap";
 import Sidebar from "../Component/Sidebar";
 import Header from "../Component/Header";
+import StatsCards from "../Component/StatsCards";
+import StatsChartCard from "../Component/StatsChartCard";
+import WeeklyRevenue from "../Component/WeeklyRevenue";
+import CheckTable from "../Component/CheckTable";
+import DailyTraffic from "../Component/DailyTraffic";
+import YourPieChart from "../Component/YourPieChart";
+import ComplexTable from "../Component/ComplexTable";
+import TasksCard from "../Component/TasksCard";
+import CalendarCard from "../Component/CalendarCard";
+import LessonCard from "../Component/LessonCard";
+import TeamCard from "../Component/TeamCard";
+import SecurityCard from "../Component/SecurityCard";
+import StarbucksCard from "../Component/StarbucksCard";
+import "../Css/dashboard.css";
 
 export default function Dashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("Dashboard");
 
-  /* Charts */
-  const lineOptions = {
-    chart: { toolbar: { show: false } },
-    stroke: { curve: "smooth" },
-    colors: ["#6a11cb"],
-    xaxis: {
-      categories: ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb"]
-    }
-  };
-
-  const lineSeries = [
-    { name: "Total Spent", data: [30, 40, 35, 50, 49, 60] }
-  ];
-
-  const barOptions = {
-    chart: { toolbar: { show: false } },
-    colors: ["#2575fc"],
-    plotOptions: {
-      bar: { borderRadius: 6, columnWidth: "40%" }
-    },
-    xaxis: {
-      categories: ["17", "18", "19", "20", "21", "22", "23"]
-    }
-  };
-
-  const barSeries = [
-    { name: "Revenue", data: [44, 55, 41, 67, 22, 43, 21] }
-  ];
-
   return (
     <>
-      <Sidebar
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        setCurrentPage={setCurrentPage}
+      {/* Sidebar overlay for mobile */}
+      <div
+        className={`sidebar-overlay ${isOpen ? "active" : ""}`}
+        onClick={() => setIsOpen(false)}
       />
 
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+        <Sidebar setIsOpen={setIsOpen} setCurrentPage={setCurrentPage} />
+      </div>
+
+      {/* Main content */}
       <div className="main-content">
-        <Header
-          setIsOpen={setIsOpen}
-          currentPage={currentPage}
-        />
+        <Header setIsOpen={setIsOpen} currentPage={currentPage} />
 
-        <div className="container-fluid">
+        <div className="dashboard-container">
 
-          {/* Stats Cards */}
-          <Row className="g-4 mb-4">
-            {[
-              { title: "Earnings", value: "$350.4" },
-              { title: "Spend this month", value: "$642.39" },
-              { title: "Sales", value: "$574.34" },
-              { title: "New Tasks", value: "154" }
-            ].map((item, index) => (
-              <Col xl={3} md={6} sm={12} key={index}>
-                <Card className="shadow-sm border-0 rounded-4 h-100">
-                  <Card.Body>
-                    <h6 className="text-muted">{item.title}</h6>
-                    <h4 className="fw-bold">{item.value}</h4>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          {/* ROW 1 — Stats Cards */}
+          <div className="stats-cards-grid">
+            <StatsCards />
+          </div>
 
-          {/* Charts */}
-          <Row className="g-4">
-            <Col lg={8} sm={12}>
-              <Card className="shadow-sm border-0 rounded-4">
-                <Card.Body>
-                  <h5>Total Spent</h5>
-                  <Chart
-                    options={lineOptions}
-                    series={lineSeries}
-                    type="line"
-                    height={300}
-                  />
-                </Card.Body>
-              </Card>
-            </Col>
+          {/* ROW 2 — Stats Chart + Weekly Revenue */}
+          <div className="row-chart-revenue">
+            <StatsChartCard />
+            <WeeklyRevenue />
+          </div>
 
-            <Col lg={4} sm={12}>
-              <Card className="shadow-sm border-0 rounded-4">
-                <Card.Body>
-                  <h5>Weekly Revenue</h5>
-                  <Chart
-                    options={barOptions}
-                    series={barSeries}
-                    type="bar"
-                    height={300}
-                  />
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+          {/* ROW 3 — Check Table + Daily Traffic + Pie Chart */}
+          <div className="row-table-traffic-pie">
+            <div className="check-table">
+              <CheckTable />
+            </div>
+            <div>
+              <DailyTraffic />
+            </div>
+          </div>
+          <div className="row-table-traffic-pie2">
+            <div className="your-pie-chart">
+              <YourPieChart />
+            </div>
+            <div className="complex-table">
+              <ComplexTable />
+            </div>
+          </div>
+          {/* </div> */}
+
+          {/* ROW 4 — Complex Table + Tasks + Calendar */}
+          <div className="row-complex-tasks-calendar">
+
+            <div>
+              <TasksCard />
+            </div>
+            <div className="calendar_card">
+              <CalendarCard />
+            </div>
+            <div>
+              <LessonCard />
+            </div>
+          </div>
+
+          {/* ROW 5 — Lesson + Team + Security + Starbucks */}
+          <div className="row-bottom">
+
+            <TeamCard />
+            <SecurityCard />
+            <StarbucksCard />
+          </div>
 
         </div>
       </div>

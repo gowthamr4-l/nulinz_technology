@@ -1,0 +1,18 @@
+/* Mobile card style */
+.mobile-table-card {
+    background: #f9faff;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Optional: shrink progress bar height on mobile */
+@media (max-width: 768px) {
+    .custom-progress {
+        height: 6px !important;
+    }
+
+    .progress-bar {
+        border-radius: 6px;
+    }
+}

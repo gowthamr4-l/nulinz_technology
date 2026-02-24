@@ -1,0 +1,42 @@
+.weekly-revenue-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px 20px;
+    width: 100%;
+    max-width: 400px;
+    /* Limits desktop width */
+    margin: 0 auto;
+    /* Centers on mobile */
+    font-family: "DM Sans", sans-serif;
+}
+
+.text-navy {
+    color: #1b2559;
+}
+
+.chart-icon-box {
+    background: #f4f7fe;
+    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4318ff;
+}
+
+/* Ensures the SVG stays centered and scales properly */
+.revenue-svg-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Mobile Specific Tweaks */
+@media (max-width: 576px) {
+    .weekly-revenue-card {
+        padding: 20px 15px;
+    }
+}
