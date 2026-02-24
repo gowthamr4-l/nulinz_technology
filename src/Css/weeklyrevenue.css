@@ -3,13 +3,35 @@
     border-radius: 20px;
     padding: 24px 20px;
     width: 100%;
-    max-width: 400px;
+    max-width: 632px;
     /* Limits desktop width */
     margin: 0 auto;
     /* Centers on mobile */
     font-family: "DM Sans", sans-serif;
 }
+/* Laptop (1024px and above) */
+@media (min-width: 1024px) {
+    .weekly-revenue-card {
+        max-width: 400px;
+        padding: 24px 20px;
+    }
+}
 
+/* Tablet (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .weekly-revenue-card {
+        max-width: 350px;
+        padding: 20px 16px;
+    }
+}
+
+/* Mobile (767px and below) */
+@media (max-width: 767px) {
+    .weekly-revenue-card {
+        max-width: 90%;
+        padding: 16px 14px;
+    }
+}
 .text-navy {
     color: #1b2559;
 }

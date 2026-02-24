@@ -92,7 +92,7 @@ body {
    ===================== */
 .row-bottom {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     gap: 16px;
 }
 
@@ -258,4 +258,30 @@ body {
     .row-complex-tasks-calendar .calendar-card {
         grid-column: auto;
     }
+}
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* 💻 Desktop (Large screens) */
+@media (min-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 📱 Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 📲 Mobile */
+@media (max-width: 767px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }

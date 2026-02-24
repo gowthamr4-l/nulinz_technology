@@ -7,42 +7,52 @@ import "../Css/header.css";
 
 export default function Header({ currentPage, setIsOpen }) {
   const displayTitle =
-    currentPage?.toLowerCase() === "dashboard" ? "Main Dashboard" : currentPage;
+    currentPage?.toLowerCase() === "dashboard"
+      ? "Main Dashboard"
+      : currentPage;
 
   return (
-    <div className="header-container d-flex justify-content-between align-items-center">
+    <div className="header-container d-flex justify-content-between align-items-center px-3 py-2">
+
       {/* Title Section */}
       <div className="title-section">
         <p className="breadcrumb-text mb-0">
           Pages / <span className="current-path">{displayTitle}</span>
         </p>
-        <h2 className="main-title fw-bold">{displayTitle}</h2>
+        <h2 className="main-title fw-bold mb-0">{displayTitle}</h2>
       </div>
 
-      {/* Responsive Action Bar */}
-      <div className="action-bar d-flex align-items-center">
-        {/* Mobile Menu Toggle */}
+      {/* Action Bar */}
+      <div className="action-bar d-flex align-items-center gap-3">
+
+        {/* Mobile Toggle Button */}
         <button
           className="mobile-toggle-btn d-lg-none"
           onClick={() => setIsOpen(true)}
           aria-label="Toggle Navigation"
         >
-          <div className="icon-wrapper">
-            <FaBars />
-          </div>
+          <FaBars size={20} />
         </button>
 
-        {/* Glassmorphism Search & Icon Container */}
-        <div className="glass-container d-flex align-items-center">
+        {/* Search + Icons */}
+        <div className="glass-container d-flex align-items-center gap-3">
+
+          {/* Search */}
           <div className="search-wrapper d-flex align-items-center">
             <FiSearch className="search-icon" />
-            <input type="text" placeholder="Search" className="search-input" />
+            <input
+              type="text"
+              placeholder="Search"
+              className="search-input"
+            />
           </div>
 
-          <IoNotificationsOutline className="header-icon" />
-          <BsMoon className="header-icon" />
-          <BsInfoCircle className="header-icon" />
+          {/* Icons */}
+          <IoNotificationsOutline className="header-icon" size={20} />
+          <BsMoon className="header-icon" size={18} />
+          <BsInfoCircle className="header-icon" size={18} />
 
+          {/* Avatar */}
           <img
             src="https://i.pravatar.cc/100?u=user"
             alt="user-avatar"

@@ -5,43 +5,34 @@ import DevelopmentTable from "../Component/DevelopmentTable";
 import CheckTable from "../Component/checkingtable";
 import ComplexTable from "../Component/comtable";
 import FourColumnTable from "../Component/fourcolumntable";
+import "../Css/table.css";
 
 function Table() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState("Tables"); // <-- current page name
+  const [currentPage, setCurrentPage] = useState("Tables");
 
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100%", backgroundColor: "#f4f7fe" }}>
+    <div className="layout-container">
 
       {/* Sidebar */}
-      <div style={{ width: "260px", height: "100vh" }}>
-        <Sidebar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          setCurrentPage={setCurrentPage}
-        />
-      </div>
+      <Sidebar
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        setCurrentPage={setCurrentPage}
+      />
 
       {/* Main Content */}
-      <div style={{ flex: 1, padding: "20px", overflow: "auto" }}>
-        <Header currentPage={currentPage} setIsOpen={setIsOpen} /> {/* <-- pass currentPage */}
+      <div className="main-content">
+        <Header currentPage={currentPage} setIsOpen={setIsOpen} />
 
-        {/* Table Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-            marginTop: "20px",
-          }}
-        >
+        {/* Responsive Grid */}
+        <div className="table-grid">
           <DevelopmentTable />
           <CheckTable />
           <FourColumnTable />
           <ComplexTable />
         </div>
       </div>
-
     </div>
   );
 }

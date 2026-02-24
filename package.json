@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://gowthamr4-l.github.io/nulinz_technology/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,0 +1,34 @@
+/* Layout */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fe;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+/* ============================= */
+/* Responsive Grid */
+/* ============================= */
+
+.table-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
+}
+
+/* ============================= */
+/* Mobile Sidebar Fix */
+/* ============================= */
+
+@media (max-width: 991px) {
+  .layout-container {
+    flex-direction: column;
+  }
+}
